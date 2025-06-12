@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Dia dos Namorados</title>
+  <link rel="stylesheet" href="estilo.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Feliz Dia dos Namorados 💘 <br> PARA O AMOR DA MINHA VIDA 💘</h1>
+    <span class="letra-e">E</span>
+    <p class="mensagem-topo">Você é minha razão de sorrir todos os dias.<br> TE AMO!!!!!!!!!!!</p>
+
+    <div class="carrossel">
+      <div class="slides">
+        <img src="imagens/foto1.jpeg" alt="Foto 1"/>
+        <img src="imagens/foto2.jpeg" alt="Foto 2"/>
+        <img src="imagens/foto3.jpeg" alt="Foto 3"/>
+        <img src="imagens/foto4.jpeg" alt="Foto 4"/>
+        <img src="imagens/foto5.jpeg" alt="Foto 5"/>
+        <img src="imagens/foto6.jpeg" alt="Foto 6"/>
+        <img src="imagens/foto7.jpeg" alt="Foto 7"/>
+        <img src="imagens/foto8.jpeg" alt="Foto 8"/>
+        <img src="imagens/foto9.jpeg" alt="Foto 9"/>
+        <img src="imagens/foto10.jpeg" alt="Foto 10"/>
+        <img src="imagens/foto11.jpeg" alt="Foto 11"/>
+        <img src="imagens/foto12.jpeg" alt="Foto 12"/>
+        <img src="imagens/foto13.jpeg" alt="Foto 13"/>
+      </div>
+    </div>
+
+    <div class="mensagem">
+      <p> 💝💖💘
+        Que este seja o primeiro de muitos dias dos Namorados. <br>
+        Te amo mais do que palavras podem dizer ❣️💞💓
+      </p>
+      <p>
+        Obrigada por ser essa namorada incrivel, te amo muito muito muito, quero que saiba que você é muito especial para mim,
+        com toda certaza uma das melhores coisas que aconteceram na minha vida, amo seu sorriso, seu jeito, suas piadocas, 
+        sua paciência e saiba que esse é o o primeiro de muitos anos que vou passar ao seu lado.  
+      </p>
+        Amo conhecer e me apaixanar por você cada dia mais <3
+      <p>
+
+      </p>
+    </div>
+
+    <div class="assinatura">
+        <h2> Ass: A garota que é besta por você 🐻</h2>
+    </div>
+
+    <div class="botao">
+        <button onclick="mostrarMensagem()">Clique aqui 💌</button>
+    </div>
+    <audio id="lovelove" src="musica.mp4" preload="auto"></audio>
+
+  </div>
+
+<script>
+  let timeoutID;
+
+  function mostrarMensagem() {
+    const musica = document.getElementById("lovelove");
+
+    // Garante que o áudio comece do início
+    musica.currentTime = 0;
+
+    // Garante que o áudio esteja carregado antes de tocar
+    musica.play().then(() => {
+      // Inicia o timer para parar após 2 minutos
+      timeoutID = setTimeout(() => {
+        musica.pause();
+        musica.currentTime = 0;
+      }, 120000);
+
+      // Mostra a mensagem e interrompe quando clicar em OK
+      alert("Te amo infinitamente 💚💛💙\nVocê é meu presente todos os dias!");
+
+      musica.pause();
+      musica.currentTime = 0;
+      clearTimeout(timeoutID);
+    }).catch((error) => {
+      console.error("Erro ao reproduzir a música:", error);
+      alert("Te amo infinitamente 💚💛💙\n(Erro ao tocar música 😥)");
+    });
+  }
+</script>
+
+</body>
+</html>
